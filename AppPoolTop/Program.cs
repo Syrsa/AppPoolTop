@@ -71,6 +71,21 @@ namespace ConsoleApplication5
 
                 Console.Clear();
 
+                Console.Write("Name");
+
+                for (int i = 0; i < maxNameLen - 4; i++)
+                {
+                    Console.Write(" ");
+                }
+                Console.WriteLine(" CPU");
+
+
+                for (int i = 0; i < maxNameLen; i++)
+                {
+                    Console.Write("-");
+                }
+                Console.WriteLine(" ------");
+
                 foreach (Process myAppCpu in counters.OrderByDescending(x => x.nextValue))
                 {
                     Console.Write(myAppCpu.appPoolName);
@@ -78,7 +93,7 @@ namespace ConsoleApplication5
 			        {
 			            Console.Write(" ");
 			        }
-                    Console.WriteLine(" CPU % = " + myAppCpu.nextValue);
+                    Console.WriteLine(" " + Math.Round(myAppCpu.nextValue, 1));
                 }
                 Thread.Sleep(3000);
             }
