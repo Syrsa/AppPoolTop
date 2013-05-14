@@ -48,6 +48,10 @@ namespace ConsoleApplication5
         {
             get
             {
+                if (String.IsNullOrEmpty(_appPoolName))
+                {
+                    return instanceName;
+                }
                 return _appPoolName;
             }
             set

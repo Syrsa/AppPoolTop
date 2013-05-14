@@ -39,9 +39,14 @@ namespace ConsoleApplication5
                         foreach (ManagementObject disk in searcher.Get())
                         {
                             Regex re = new Regex("-ap \"(.+)\"");
-                            process.appPoolName = re.Match(disk.GetPropertyValue("CommandLine").ToString()).Value.Substring(5);
-                            process.appPoolName = process.appPoolName.Substring(0, process.appPoolName.Length - 1);
-                            Console.WriteLine(process.appPoolName);
+
+                            if (disk.GetPropertyValue("CommandLine") != null)
+                            {
+                                // Should work for IIS6
+                                string commandLine = disk.GetPropertyValue("CommandLine").ToString();
+                                process.appPoolName = re.Match(commandLine).Value.Substring(5);
+                                process.appPoolName = process.appPoolName.Split('"')[0];
+                            }
                         }
                     }
                 }
