@@ -6,3 +6,7 @@ An Windows app to view CPU usage per AppPool for IIS, doens't always give a fair
 The app doesn't handle it well when an AppPool dies either (simply crashes)
 
 But for simple usage it does what I wanted it to.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/orrche/apppooltop/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
