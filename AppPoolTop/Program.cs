@@ -15,7 +15,7 @@ namespace ConsoleApplication5
         static void Main(string[] args)
         {
 
-
+            /// Weee new test.....
 
             PerformanceCounterCategory cat = new PerformanceCounterCategory("Process");
             string[] instances = cat.GetInstanceNames();
